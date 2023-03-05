@@ -1,3 +1,4 @@
+import './App.css'
 function App() {
   return(
   <div>
@@ -5,91 +6,125 @@ function App() {
     <hr />
     <table style={{
       width:'400px'}}>
-      <tr style={{border: '1px solid black'}}>
-        <td style={{border: '1px solid black'}}>
-          0
+{/*FIRST ROW*/}
+      <tr >
+        <td colSpan={4}>RESULT</td>
+      </tr>
+{/*SECOND ROW*/}      
+      <tr>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >C</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >/</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >*</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>        
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >-</button>
+          </td>
+      </tr>
+{/*THIRD ROW*/}
+      <tr>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'          
+          >7</button>
+        </td>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >8</button>
+        </td>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >9</button>
+        </td>
+        <td rowSpan={2}>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >+</button>
         </td>
       </tr>
-      <tr style={{border: '1px solid black'}}>
-        <td style={{border: '1px solid black'}}>
-          0
+{/*FOURTH ROW*/}
+      <tr>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >4</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >5</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>          <button 
+          type='button' 
+          className='btn btn-primary'
+          >6</button></td>
+      </tr>
+{/*FIFTH ROW*/}
+      <tr>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >1</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >2</button>
+        </td>
+        <td>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >3</button>
+        </td>
+        <td rowSpan={2}>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >=</button>
         </td>
       </tr>
-      <tr style={{border: '1px solid black'}}>
-        <td style={{border: '1px solid black'}}>
-          0
+{/*SIXTH ROW*/}
+      <tr>
+        <td colSpan={2}>
+        <button 
+          type='button' 
+          className='btn btn-primary'
+          >0</button>
         </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-      </tr>
-      <tr style={{border: '1px solid black'}}>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
+        <td>
+          <button 
+          type='button' 
+          className='btn btn-primary'
+          >.</button>
         </td>
       </tr>
-      <tr style={{border: '1px solid black'}}>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-      </tr>
-      <tr style={{border: '1px solid black'}}>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-        <td style={{border: '1px solid black'}}>
-          0
-        </td>
-      </tr>
-      
     </table>
   </div>
   )
