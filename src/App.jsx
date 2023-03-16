@@ -2,19 +2,86 @@ import { useState } from 'react'
 import './App.css'
 const buttonClasses = 'btn btn-primary w-75 mt-2';
 function App() {
+  const [operator, setOperator] = useState('');
+  const [previousValue, setPreviousValue] = useState('');
+  const [clearScreen, setClearScreen] = useState(false);
   const [screen, setScreen] = useState('0');
+
   const handleButtonClick = (e)=> {
     const value = e.target.value;
+    if (value === '.'){
+      if (screen.indexOf('.') !== -1) return;
+    }
     if (value === 'C'){
       setScreen('0');
-      return
+      return;
     }
-    if (screen === '0'){
-      setScreen(value)
+    if(clearScreen){
+      setScreen(value);
+      setClearScreen(false);
+      return;
+    }
+    if (screen === '0'&& value !== '.'){
+      setScreen(value);
     }else{
       setScreen(`${screen}${value}`);
     }
-  };
+};
+
+const handleDelButtonClick = () =>{
+    if(screen.length === 1){
+      setScreen('0');
+      return;
+    }else{
+    setScreen(screen.slice(0, -1));
+    }
+}
+
+const handleOperationButtonClick = (e) =>{
+  setClearScreen(true);
+  setPreviousValue(screen);
+  setOperator(e.target.value);
+}
+
+const handleEqualButtonClick = () =>{
+  let result = 0;
+  let a = +previousValue;
+  let b = +screen; 
+  switch (operator) {
+    case '+':
+      result = a + b;
+      break;
+  
+    default:
+      break;
+  }
+  switch (operator) {
+    case '-':
+      result = a - b;
+      break;
+  
+    default:
+      break;
+  }
+  switch (operator) {
+    case '*':
+      result = a * b;
+      break;
+  
+    default:
+      break;
+  }
+  switch (operator) {
+    case '/':
+      result = a / b;
+      break;
+  
+    default:
+      break;
+  }
+  setScreen(result);
+
+}
 
   /*const handleButtonClick = (value)=> {
     if (screen === '0'){
@@ -67,18 +134,24 @@ function App() {
         <button 
           type='button' 
           className={buttonClasses}
+          value='/'
+          onClick={(e)=>handleOperationButtonClick(e)}
           >/</button>
         </td>
         <td>
         <button 
           type='button' 
           className={buttonClasses}
+          value='*'
+          onClick={(e)=>handleOperationButtonClick(e)}
           >*</button>
         </td>
         <td>        
         <button 
           type='button' 
           className={buttonClasses}
+          value='-'
+          onClick={(e)=>handleOperationButtonClick(e)}
           >-</button>
           </td>
       </tr>
@@ -113,6 +186,8 @@ function App() {
           type='button' 
           className={buttonClasses}
           style={{height: "85px"}}
+          value='+'
+          onClick={(e)=>handleOperationButtonClick(e)}
           >+</button>
         </td>
       </tr>
@@ -172,6 +247,7 @@ function App() {
           type='button' 
           className={buttonClasses}
           style={{height: "85px"}}
+          onClick= {handleEqualButtonClick}
           >=</button>
         </td>
       </tr>
@@ -181,6 +257,7 @@ function App() {
         <button 
           type='button' 
           className={buttonClasses}
+          onClick={(e) => handleDelButtonClick(e)}  
           >DEL</button>
         </td>
         <td>
@@ -195,6 +272,8 @@ function App() {
           <button 
           type='button' 
           className={buttonClasses}
+          value='.'
+          onClick={(e) => handleButtonClick(e)}  
           >.</button>
         </td>
       </tr>
