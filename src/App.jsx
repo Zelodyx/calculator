@@ -52,34 +52,29 @@ const handleEqualButtonClick = () =>{
       result = a + b;
       break;
   
-    default:
-      break;
-  }
-  switch (operator) {
     case '-':
       result = a - b;
       break;
-  
-    default:
-      break;
-  }
-  switch (operator) {
+
     case '*':
       result = a * b;
       break;
-  
-    default:
-      break;
-  }
-  switch (operator) {
+
     case '/':
-      result = a / b;
-      break;
-  
+      if(b === 0){
+        result=('Infinito!');
+        setClearScreen(true);
+        break;
+      }else{
+        result = a / b
+      }
+      break;  
+      
     default:
       break;
   }
-  setScreen(result);
+
+  setScreen(result.toString());
 
 }
 
