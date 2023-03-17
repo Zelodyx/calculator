@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Button from './components/Button';
 const buttonClasses = 'btn btn-primary w-75 mt-2';
 function App() {
   const [operator, setOperator] = useState('');
@@ -213,7 +214,7 @@ const handleEqualButtonClick = () =>{
       </tr>
 {/*FIFTH ROW*/}
       <tr>
-        <td>
+        <td rowSpan={1}>
         <button 
           type='button' 
           className={buttonClasses}
@@ -221,27 +222,29 @@ const handleEqualButtonClick = () =>{
           onClick={(e) => handleButtonClick(e)}          
           >1</button>
         </td>
-        <td>
+        <td rowSpan={1}>
         <button 
           type='button' 
           className={buttonClasses}
+          style={{}}
           value='2'
           onClick={(e) => handleButtonClick(e)}          
           >2</button>
         </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='3'
-          onClick={(e) => handleButtonClick(e)}
-          >3</button>
-        </td>
+        
+        <Button 
+        classes={buttonClasses}
+        handleClick={handleButtonClick}
+        rows={1}
+        style={{}}
+        value='3'/>  
+
         <td rowSpan={2}>
         <button 
           type='button' 
           className={buttonClasses}
           style={{height: "85px"}}
+          value='='
           onClick= {handleEqualButtonClick}
           >=</button>
         </td>
