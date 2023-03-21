@@ -79,6 +79,145 @@ const handleEqualButtonClick = () =>{
 
 }
 
+const infoButtons = [
+  [
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'C',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleOperationButtonClick,
+      rows:1,
+      style:{},
+      value:'/',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleOperationButtonClick,
+      rows:1,
+      style:{},
+      value:'*',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleOperationButtonClick,
+      rows:1,
+      style:{},
+      value:'-',
+    },
+  ],
+  [
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'7',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'8',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'9',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleOperationButtonClick,
+      rows:2,
+      style:{height: "85px"},
+      value:'+',
+    },
+  ],
+  [
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'4',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'5',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'6',
+    },
+  ],
+  [
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'1',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'2',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'3',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleEqualButtonClick,
+      rows:2,
+      style:{height: "85px"},
+      value:'=',
+    },
+  ],
+  [
+    {
+      classes:buttonClasses,
+      handleClick:handleDelButtonClick,
+      rows:1,
+      style:{},
+      value:'DEL',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'0',
+    },
+    {
+      classes:buttonClasses,
+      handleClick:handleButtonClick,
+      rows:1,
+      style:{},
+      value:'.',
+    },
+  ]
+]
+
   /*const handleButtonClick = (value)=> {
     if (screen === '0'){
       setScreen(value)
@@ -116,165 +255,22 @@ const handleEqualButtonClick = () =>{
         <h2>{screen}</h2> 
         </td>
       </tr>
-{/*SECOND ROW*/}      
-      <tr>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='C'
-          onClick={(e) => handleButtonClick(e)}
-          >C</button>
-        </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='/'
-          onClick={(e)=>handleOperationButtonClick(e)}
-          >/</button>
-        </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='*'
-          onClick={(e)=>handleOperationButtonClick(e)}
-          >*</button>
-        </td>
-        <td>        
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='-'
-          onClick={(e)=>handleOperationButtonClick(e)}
-          >-</button>
-          </td>
-      </tr>
-{/*THIRD ROW*/}
-      <tr>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}  
-          value='7'
-          onClick={(e) => handleButtonClick(e)}
-          >7</button>
-        </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='8'
-          onClick={(e) => handleButtonClick(e)}
-          >8</button>
-        </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='9'
-          onClick={(e) => handleButtonClick(e)}
-          >9</button>
-        </td>
-        <td rowSpan={2}>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          style={{height: "85px"}}
-          value='+'
-          onClick={(e)=>handleOperationButtonClick(e)}
-          >+</button>
-        </td>
-      </tr>
-{/*FOURTH ROW*/}
-      <tr>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='4'
-          onClick={(e) => handleButtonClick(e)}
-          >4</button>
-        </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='5'
-          onClick={(e) => handleButtonClick(e)}
-          >5</button>
-        </td>
-        <td>          <button 
-          type='button' 
-          className={buttonClasses}
-          value='6'
-          onClick={(e) => handleButtonClick(e)}
-          >6</button></td>
-      </tr>
-{/*FIFTH ROW*/}
-      <tr>
-        <td rowSpan={1}>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='1'
-          onClick={(e) => handleButtonClick(e)}          
-          >1</button>
-        </td>
-        <td rowSpan={1}>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          style={{}}
-          value='2'
-          onClick={(e) => handleButtonClick(e)}          
-          >2</button>
-        </td>
-        
-        <Button 
-        classes={buttonClasses}
-        handleClick={handleButtonClick}
-        rows={1}
-        style={{}}
-        value='3'/>  
-
-        <td rowSpan={2}>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          style={{height: "85px"}}
-          value='='
-          onClick= {handleEqualButtonClick}
-          >=</button>
-        </td>
-      </tr>
-{/*SIXTH ROW*/}
-      <tr>
-      <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          onClick={(e) => handleDelButtonClick(e)}  
-          >DEL</button>
-        </td>
-        <td>
-        <button 
-          type='button' 
-          className={buttonClasses}
-          value='0'
-          onClick={(e) => handleButtonClick(e)}          
-          >0</button>
-        </td>
-        <td>
-          <button 
-          type='button' 
-          className={buttonClasses}
-          value='.'
-          onClick={(e) => handleButtonClick(e)}  
-          >.</button>
-        </td>
-      </tr>
+{/*SECOND ROW*/}    
+      {infoButtons.map((row)=>{
+        return(
+          <tr>
+            {row.map((btn)=>{
+              return(<Button 
+                classes={btn.classes}
+                handleClick={btn.handleClick}
+                value={btn.value}
+                style={btn.style} 
+                rows={btn.rows}
+                />)
+            })}
+          </tr>
+        )
+      })}
     </table>
   </div>
   )
